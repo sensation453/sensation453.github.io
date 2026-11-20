@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew van der Ree | Portfolio</title>
+    <link rel="stylesheet" href="css/style.css?v=20261120123418">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    
+    <!-- Navigatie -->
+    <nav class="navbar">
+        <div class="logo">Andrew.</div>
+        <div class="links">
+            <a href="#over-mij">Over Mij</a>
+            <a href="#setup">Mijn Setup</a>
+            <a href="#werkervaring">Werkervaring</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Sectie -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Hallo, ik ben Andrew.</h1>
+            <p class="hero-subtitle">
+                Ik ben een <span id="typewriter" class="highlight"></span><span class="cursor-type">|</span>
+            </p>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fa-solid fa-arrow-down"></i>
+        </div>
+    </header>
+
+    <!-- F1 Countdown Sectie (Nummer 3) -->
+    <section class="f1-countdown">
+        <div class="container text-center">
+            <h2 class="f1-title fade-up"><i class="fa-solid fa-flag-checkered"></i> Volgende Race</h2>
+            <div id="countdown" class="countdown-container fade-up">
+                <div class="countdown-box"><span id="days">00</span><p>Dagen</p></div>
+                <div class="countdown-box"><span id="hours">00</span><p>Uren</p></div>
+                <div class="countdown-box"><span id="minutes">00</span><p>Minuten</p></div>
+                <div class="countdown-box"><span id="seconds">00</span><p>Seconden</p></div>
+            </div>
+            <p id="f1-location" class="f1-location fade-up">Laden...</p>
+        </div>
+    </section>
+
+    <!-- Over Mij -->
+    <section id="over-mij" class="section">
+        <div class="container">
+            <h2 class="section-title fade-up">Over Mij</h2>
+            <div class="about-grid">
+                <div class="about-block fade-up">
+                    <h3>Wie ben ik?</h3>
+                    <p>Ik ben Andrew, 17 jaar en geboren en getogen in Almere. Na mijn Mavo 4 in Almere ben ik naar het ROC in Hilversum gegaan. Daar begon ik met de opleiding Handel Ondernemer, maar ik merkte al snel dat de ICT-kant me veel meer trok.</p>
+
+                    <p>Ik ben flexibel inzetbaar en zoek een baan waarin ik veel uren kan maken naast school.</p>
+<div class="skills">
+                        <span>Kom altijd op tijd</span>
+                        <span>Doorzetter</span>
+                        <span>Zelfstandig</span>
+                        <span>Flexibel</span>
+                        <span>Vrolijk</span>
+                    </div>
+
+                    <div class="availability">
+                        <h4>Beschikbaarheid</h4>
+                        <ul>
+                            <li><strong>Ma – Vr:</strong> na schooltijd (korte lesdagen)</li>
+                            <li><strong>Za – Zo:</strong> hele dag</li>
+                            <li><strong>Uren:</strong> tot 30 uur per week</li>
+                            <li><strong>Do:</strong> de hele dag beschikbaar</li>
+                        </ul>
+                    </div><div class="cv-download" style="margin-top: 30px; opacity: 1;">
+                        <a href="files/Andrew_vanderRee_cv.pdf" download class="btn-secondary" style="opacity: 1; border-color: #0071e3;">
+                            <i class="fa-solid fa-download"></i> Download mijn CV (PDF)
+                        </a>
+                    </div>
+                </div>
+                <div class="about-block fade-up">
+                    <h3>Wat ik doe in mijn vrije tijd</h3>
+                    <p>Als ik niet met school of werk bezig ben, ben ik hier mee bezig:</p>
+                    <div class="interests-list">
+                        <div class="interest-item">
+                            <i class="fa-solid fa-flag-checkered"></i>
+                            <div>
+                                <strong>Formule 1 & Racen</strong>
+                                <span>Groot fan van de F1, race zelf ook graag en hou van alles met een motor.</span>
+                            </div>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <div>
+                                <strong>Gamen</strong>
+                                <span>Even helemaal weg zijn van de wereld en een potje gamen.</span>
+                            </div>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fa-solid fa-dumbbell"></i>
+                            <div>
+                                <strong>Gymen</strong>
+                                <span>Fysiek bezig blijven en werken aan een goede conditie.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Sectie (Nummer 5) -->
+    <section class="quote-section">
+        <div class="container">
+            <h2 class="quote-text fade-up">"No matter how small your progress is, you will always beat those who did nothing."</h2>
+        </div>
+    </section>
+
+    <!-- Mijn Setup / Gear -->
+    <section id="setup" class="section bg-darker">
+        <div class="container">
+            <h2 class="section-title fade-up">Mijn Setup & Gear</h2>
+            <p class="section-subtitle fade-up">Waar ik mee game, race en werk.</p>
+            <div class="projects-grid">
+                <div class="project-card fade-up">
+                    <div class="project-icon"><i class="fa-solid fa-desktop"></i></div>
+                    <h3>Mijn Krachtige Laptop</h3>
+                    <p>=Ik werk met een erg sterke laptop waarmee ik hiermee mijn Ict opleiding vlot doorheen kan gaan.</p>
+                    <span class="project-tag">Hardware</span>
+                </div>
+                <div class="project-card fade-up">
+                    <div class="project-icon"><i class="fa-solid fa-steering-wheel"></i></div>
+                    <h3>Racing Simulator</h3>
+                    <p>Omdat ik van racen hou, heb ik een race setup. Zo kan ik oefenen om uiteindelijk echt een keertje in een race auto te kunnen rijden.</p>
+                    <span class="project-tag">Racing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Werkervaring -->
+    <section id="werkervaring" class="section">
+        <div class="container">
+            <h2 class="section-title fade-up">Werkervaring</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-up">
+                    <div class="timeline-date">Feb 2026 - Aug 2026</div>
+                    <div class="timeline-content">
+                        <h3>Bezorger Yammie pastabar</h3>
+                        <p>Bestellingen klaarmaken in de keuken, eten bezorgen bij klanten en zorgen dat alles op tijd aankwam.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-date">Feb 2025 - Jul 2025</div>
+                    <div class="timeline-content">
+                        <h3>Bezorger I love sushi</h3>
+                        <p>Bestellingen inpakken, sushi bezorgen en bijspringen in de winkel waar nodig.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-date">Feb 2023 - Sep 2023</div>
+                    <div class="timeline-content">
+                        <h3>Krantenbezorger Spotta</h3>
+                        <p>Vroeg opstaan om in alle vroegte de kranten te bezorgen. Mijn eerste bijbaan om wat eigen geld te verdienen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opleiding -->
+    <section id="opleiding" class="section bg-darker">
+        <div class="container">
+            <h2 class="section-title fade-up">Opleiding</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-up">
+                    <div class="timeline-date">Aug 2025 - Sep 2027</div>
+                    <div class="timeline-content">
+                        <h3>Cybersecurity</h3>
+                        <p>ROC Hilversum, Hilversum<br><br>Hier leer ik hoe je systemen beveiligt, hoe je met klanten omgaat en hoe je ICT-problemen snel oplost.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-date">2024 - 2025</div>
+                    <div class="timeline-content">
+                        <h3>Handel Ondernemer (Gestart)</h3>
+                        <p>ROC Hilversum, Hilversum<br><br>Hier ben ik begonnen, maar ik merkte al snel dat de ICT-kant me meer lag. Daarom heb ik de switch gemaakt.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-date">2021 - 2024</div>
+                    <div class="timeline-content">
+                        <h3>Mavo</h3>
+                        <p>Poortlyceum, Almere<br><br>Mijn Mavo diploma gehaald in Almere.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Formulier -->
+    <footer id="contact" class="section contact-section">
+        <div class="container text-center">
+            <h2 class="section-title fade-up">Laten we connecten.</h2>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info fade-up">
+                    <p><i class="fa-solid fa-location-dot"></i> Almere, Nederland</p>
+                    <p><i class="fa-solid fa-phone"></i> +31 6 44386659</p>
+                    <p><i class="fa-solid fa-envelope"></i> andrew.vanderree@gmail.com</p>
+                </div>
+                
+                <!-- Contact Formulier -->
+                <form class="contact-form fade-up" action="https://formspree.io/f/xvkabpkl" method="POST">
+                    <div class="input-group">
+                        <input type="text" name="name" placeholder="Jouw Naam" required>
+                        <input type="email" name="email" placeholder="Jouw E-mail" required>
+                    </div>
+                    <textarea name="message" rows="5" placeholder="Jouw Bericht..." required></textarea>
+                    <button type="submit" class="btn-primary">Verstuur Bericht</button>
+                </form>
+            </div>
+</div>
+    </footer>
+
+    <!-- Terug naar boven knop -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js?v=20261120123418"20261120120551"></script>
+</body>
+</html>
