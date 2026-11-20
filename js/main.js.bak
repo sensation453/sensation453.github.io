@@ -1,0 +1,102 @@
+﻿gsap.registerPlugin(ScrollTrigger);
+
+// --- 1. Typewriter Effect ---
+const words = ["Cybersecurity Student", "17-jarige uit Almere", "Gamer", "F1 Fan"];
+let i = 0;
+let timer;
+
+function typingEffect() {
+    let word = words[i].split("");
+    var loopTyping = function() {
+        if (word.length > 0) {
+            document.getElementById('typewriter').innerHTML += word.shift();
+        } else {
+            deletingEffect();
+            return false;
+        }
+        timer = setTimeout(loopTyping, 100);
+    };
+    loopTyping();
+}
+
+function deletingEffect() {
+    let word = document.getElementById('typewriter').innerHTML.split("");
+    var loopDeleting = function() {
+        if (word.length > 0) {
+            word.pop();
+            document.getElementById('typewriter').innerHTML = word.join("");
+        } else {
+            if (words.length > (i + 1)) {
+                i++;
+            } else {
+                i = 0;
+            }
+            typingEffect();
+            return false;
+        }
+        timer = setTimeout(loopDeleting, 50);
+    };
+    loopDeleting();
+}
+typingEffect();
+
+// --- 2. Hero Animatie ---
+const tl = gsap.timeline();
+tl.from(".hero-title", { y: 30, opacity: 0, duration: 1, ease: "power3.out", delay: 0.2 })
+  .from(".hero-subtitle", { y: 20, opacity: 0, duration: 1, ease: "power3.out" }, "-=0.6")
+  .from(".scroll-indicator", { opacity: 0, duration: 1 }, "-=0.5");
+
+// --- 3. Scroll Fade-Up Animaties ---
+gsap.utils.toArray('.fade-up').forEach(element => {
+    gsap.from(element, {
+        scrollTrigger: {
+            trigger: element,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+        },
+        y: 40, opacity: 0, duration: 0.8, ease: "power2.out"
+    });
+});
+
+// --- 4. Back to Top Knop ---
+const backToTopBtn = document.getElementById("backToTop");
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 500) {
+        backToTopBtn.classList.add("show");
+    } else {
+        backToTopBtn.classList.remove("show");
+    }
+});
+
+backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// --- 5. F1 Countdown Timer ---
+// Dit is een voorbeeld datum. Je kunt deze aanpassen naar de echte datum van de volgende race!
+// Formaat: "Maand dag, jaar uur:minuut:seconde"
+const raceDate = new Date("June 15, 2025 15:00:00").getTime();
+const raceName = "Grand Prix van Canada";
+
+document.getElementById("f1-location").innerText = "Volgende race: " + raceName;
+
+const countdownInterval = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = raceDate - now;
+
+    if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").innerHTML = "<h3>De race is begonnen!</h3>";
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+    document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+    document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+    document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+}, 1000);
